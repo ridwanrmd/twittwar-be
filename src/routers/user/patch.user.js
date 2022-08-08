@@ -10,7 +10,6 @@ const updateUserController = async (req, res, next) => {
   try {
     const { user_id } = req.user;
     const { username, first_name, last_name, bio } = req.body;
-    console.log(req.body);
 
     const emptyFields = isFieldEmpties({
       username,
@@ -53,7 +52,6 @@ const updateUserController = async (req, res, next) => {
 
 const updateUserAvatarController = async (req, res, next) => {
   try {
-    // console.log(req);
     const { user_id } = req.user;
     const { filename } = req.file;
 
@@ -63,7 +61,6 @@ const updateUserAvatarController = async (req, res, next) => {
       { image: finalFileName },
       { where: { user_id } }
     );
-    console.log(resUpdateAvatar);
 
     //  affectedRows adalah jumlah baris yang terupdate
     if (!resUpdateAvatar) throw { message: "Failed to update avatar" };

@@ -3,7 +3,7 @@ const isFieldEmpties = (fields) => {
     (key) => fields[key] == "" || fields[key] == undefined
   );
 
-  return filteredKeys; // ['username']
+  return filteredKeys;
 };
 
 const passwordValidator = (value) => {

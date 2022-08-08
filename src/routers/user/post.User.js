@@ -112,7 +112,6 @@ const registerUserHandler = async (req, res, next) => {
 const loginUserController = async (req, res, next) => {
   try {
     const { emailUsername, password } = req.body;
-    console.log(emailUsername);
 
     const resGetUser = await User.findOne({
       where: { [Op.or]: { username: emailUsername, email: emailUsername } },
