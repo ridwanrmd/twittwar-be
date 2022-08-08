@@ -4,6 +4,7 @@ const { User } = require("../../../models");
 const auth = async (req, res, next) => {
   try {
     // get token
+    console.log(req.body);
     const token = req.token;
     // verify token
     const verifiedToken = verifyToken(token);

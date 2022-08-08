@@ -9,7 +9,7 @@ const likePost = async (req, res, next) => {
     const { post_id } = req.params;
 
     const resGetLike = await Like.findOne({
-      where: { post_id },
+      where: { post_id, user_id },
     });
     if (!resGetLike) {
       await Like.create({ post_id, user_id });

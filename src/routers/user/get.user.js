@@ -36,7 +36,7 @@ const verifyUserController = async (req, res, next) => {
 
     if (!getUserToken)
       return res.send(
-        "<h2>your code has expired, please use the new code</h2>"
+        "<h2>your token has expired, please use the new token</h2>"
       );
 
     const verifiedToken = verifyToken(token);
