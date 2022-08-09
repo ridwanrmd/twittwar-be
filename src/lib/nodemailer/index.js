@@ -15,7 +15,6 @@ const courier = nodemailer.createTransport({
 });
 
 const sendMail = async ({ email, token }) => {
-  console.log(email);
   const mail = {
     from: "Twittwar Developer <ridwan95rmd@gmail.com>",
     to: email,

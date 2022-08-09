@@ -26,6 +26,15 @@ const updateUserController = async (req, res, next) => {
       };
     }
 
+    const resGetUser = await User.findOne({
+      where: { username },
+    });
+    if (resGetUser) {
+      throw {
+        code: 400,
+        message: "Username is already exist",
+      };
+    }
     // const resGetPhone = await User.findOne({
     //   attributes: ["phone"],
     //   where: { [Op.and]: { phone, user_id } },

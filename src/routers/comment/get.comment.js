@@ -18,7 +18,6 @@ router.get("/:post_id", auth, async (req, res, next) => {
       subQuery: false,
       include: [{ model: User }],
     });
-    // console.log(getComments);
     res.send({
       status: "Success",
       message: "Success get a comment",

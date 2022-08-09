@@ -63,12 +63,12 @@ const registerUserHandler = async (req, res, next) => {
       if (user.username == username) {
         throw {
           code: 400,
-          message: "Username sudah digunakan",
+          message: "Username is already exist",
         };
       } else {
         throw {
           code: 400,
-          message: "Email sudah digunakan",
+          message: "Email is already use",
         };
       }
     }
